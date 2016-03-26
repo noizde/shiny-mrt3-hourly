@@ -12,12 +12,15 @@ shinyServer(function(input, output) {
       mrtExit;
     }
     
+    colnames(amtSet) <- 1:20;
+    
     dataset$amt <- amtSet[,input$time];
+    dataset;
   });
   
   output$mrtPlot <- renderPlot({
     p <- ggmap(mnl);
-    p <- p + geom_point(data=stationLocs, aes(x = lon, y = lat, color = amt, size = 5));
+    p <- p + geom_point(data=selectedData(), aes(x = lon, y = lat, color = amt));
     p
   })
 })
