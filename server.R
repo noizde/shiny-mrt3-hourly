@@ -17,7 +17,7 @@ shinyServer(function(input, output) {
   
   output$mrtPlot <- renderPlot({
     p <- ggmap(mnl);
-    p <- p + geom_point(data=stationLocs, aes(x = lon, y = lat, color = "red", size = 5));
+    p <- p + geom_point(data=stationLocs, aes(x = lon, y = lat, color = amt, size = 5));
     p
   })
 })
