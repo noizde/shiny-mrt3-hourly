@@ -20,7 +20,9 @@ shinyServer(function(input, output) {
   
   output$mrtPlot <- renderPlot({
     p <- ggmap(mnl);
-    p <- p + geom_point(data=selectedData(), aes(x = lon, y = lat, color = amt));
+    p <- p + 
+      geom_point(data=selectedData(), aes(x = lon, y = lat, color = amt)) + 
+      scale_color_gradientn(limits = c(0,7000), colours=c("navyblue", "darkmagenta", "darkorange1"));
     p
   })
 })
