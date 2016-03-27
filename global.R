@@ -14,3 +14,4 @@ stationLocs <- read.csv("mrt3-station-coords.csv", header = TRUE);
 stationNames <- names(perHour)[3:15];
 
 mnl <- get_map(location=c(lon = 121.0536657, lat = 14.5811839), zoom = 12, scale = "auto");
+p <- ggmap(mnl);
