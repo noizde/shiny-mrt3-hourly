@@ -3,6 +3,10 @@ library(ggplot2);
 library(ggmap);
 
 shinyServer(function(input, output) {
+  
+  mnl <- get_map(location=c(lon = 121.0536657, lat = 14.5811839), zoom = 12, scale = "auto");
+  p <- ggmap(mnl);
+  
   selectedData <- reactive({
     dataset <- stationLocs;
     

@@ -12,6 +12,3 @@ names(timeSlices) <- as.character(perHour[seq(1, 40, 2),1]);
 
 stationLocs <- read.csv("mrt3-station-coords.csv", header = TRUE);
 stationNames <- names(perHour)[3:15];
-
-mnl <- get_map(location=c(lon = 121.0536657, lat = 14.5811839), zoom = 12, scale = "auto");
-p <- ggmap(mnl);
